@@ -1,0 +1,69 @@
+.custom-tooltip {
+  background-color: white;
+  padding: 4px;
+}
+
+.close-values-chart {
+  height: fit-content;
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 0.7px #dfe5f9;
+}
+
+.ticker {
+  font-size: 18px;
+  color: #3a4056;
+  font-weight: 500;
+}
+
+.ticker-price-chart {
+  font-size: 18px;
+  color: "#000A12";
+  font-weight: 400;
+  font-style: normal;
+  font-family: Oxygen;
+}
+
+.header-chart {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: solid 1px #f2f4fd;
+}
+
+.header-list {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #f2f4fd;
+}
+
+.list-tickers {
+  z-index: 10;
+  display: flex;
+  overflow-y: scroll;
+  max-height: 440px;
+  flex-direction: column;
+  border-left: solid 1px #f2f4fd;
+}
+
+.list-item {
+  display: flex;
+  padding: 10px 24px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #f2f4fd;
+}
+
+.list-item:hover {
+  scale: 1.02;
+  cursor: pointer;
+  background-color: #f2f4fd;
+}
+
+.list-item-active {
+  background-color: #f2f4fd;
+}

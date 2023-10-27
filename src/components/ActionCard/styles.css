@@ -1,0 +1,71 @@
+.action-card-container {
+  min-width: 270px;
+  max-width: 270px;
+  padding: 10px;
+  height: 100px;
+  overflow-y: hidden;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 0.7px #dfe5f9;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.action-card-container:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.icon-container {
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-action-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-action-card-ticker {
+  gap: 13px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ticker-label {
+  font-size: 15px;
+  color: "#000A12";
+  font-weight: 400;
+  font-style: normal;
+  font-family: Oxygen;
+}
+
+.ticker-price {
+  font-size: 15px;
+  color: "#000A12";
+  font-weight: 400;
+  font-style: normal;
+  font-family: Oxygen;
+}
+
+.ticker-percentageVariation {
+  font-size: 13px;
+  color: "#000A12";
+  font-weight: 600;
+  font-style: normal;
+  font-family: Oxygen;
+}
+
+.ticket-values {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}

@@ -1,0 +1,51 @@
+.container-sidebar {
+  z-index: 1;
+  display: flex;
+  width: 218px;
+  position:fixed;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #1f263e;
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+.route-container {
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  padding: 12px 22px;
+}
+
+.route-container:hover{
+  cursor: pointer;
+  background-color: #303750;
+}
+
+
+.active-route-container {
+  background-color: #303750;
+  border-left: solid 4px #50b8e4;
+}
+
+.route-font {
+  color: white;
+  font-weight: 400;
+  font-family: Oxygen;
+  font-size: 14px;
+}
+
+.active-route-font {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Oxygen;
+}
+
+.routes-container {
+  gap: 8px;
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+}

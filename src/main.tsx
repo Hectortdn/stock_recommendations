@@ -32,6 +32,7 @@ const router = createBrowserRouter([
         <h1>NOT FOUND</h1>
       </>
     ),
+
     children: [
       {
         path: "dashboard",

@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<svg width="42" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M41 26.556c-1.111-.276-2.922-.286-4.444-.276-.51.003-.202-.018-.89 0-1.794.056-3.551.802-3.555 2.914-.004 2.251 2.222 2.917 4.445 2.917 2.222 0 4.444.514 4.444 2.917 0 1.806-1.794 2.597-4.03 2.859-1.779 0-2.637.057-4.859-.22m4.445 1.11V41m0-17.778v2.222M1 21h24.444M1 21c0 11.046 8.954 20 20 20M1 21C1 9.954 9.954 1 21 1m0 40c.751 0 1.493-.041 2.222-.122M21 41C4.901 23.4 14.292 7 21 1m0 0c8.708 0 16.116 5.565 18.862 13.333M21 1c2.978 2.663 6.484 7.376 8.055 13.333"
+        stroke="#2BB5EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    <defs>
+        <linearGradient id="prefix__paint0_linear_280_185" x1="21" y1="1" x2="21" y2="41"
+            gradient-units="userSpaceOnUse">
+            <stop stop-color="#2BB5EE" />
+            <stop offset="0.579" stop-color="#2BB5EE" stop-opacity="0.6" />
+            <stop offset="1" stop-color="#2BB5EE" stop-opacity="0.3" />
+        </linearGradient>
+    </defs>
+</svg>

@@ -1,24 +1,3 @@
-/* @font-face {
-  font-family: "Oxygen";
-  src: local("OxygenRegular"), url("./Oxygen-Regular.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Oxygen";
-  src: local("OxygenLight"), url("./Oxygen-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Oxygen";
-  src: local("OxygenBold"), url("./Oxygen-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-} */
-
 :root {
   
   line-height: 1.5;

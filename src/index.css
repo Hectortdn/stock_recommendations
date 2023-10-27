@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Oxygen";
+  src: local("OxygenRegular"), url("./Oxygen-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oxygen";
+  src: local("OxygenLight"), url("./Oxygen-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oxygen";
+  src: local("OxygenBold"), url("./Oxygen-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  font-family: OxygenRegular, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: color;
+  background-color: #f3f6fe;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  line-height: 1.5;
+  font-weight: 400;
+  /* font-synthesis: none; */
+  font-family: OxygenRegular, system-ui, sans-serif;
+}

@@ -9,6 +9,20 @@ import "./index.css";
 import DashboardScreen from "./pages/screens/dashboard.tsx";
 import DetailsScreen from "./pages/screens/details.tsx";
 
+const DevelopmentAlertScreen = () => (
+  <div
+    style={{
+      flex: 1,
+      height: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <h1>Em Desenvolvimento....</h1>
+  </div>
+);
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: "details",
         element: <DetailsScreen />,
+      },
+      {
+        path: "tables",
+        element: <DevelopmentAlertScreen />,
+      },
+      {
+        path: "about",
+        element: <DevelopmentAlertScreen />,
       },
     ],
   },

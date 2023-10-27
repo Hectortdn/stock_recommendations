@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bayon&display=swap");
+
+.logo-label {
+  color: white;
+  font-family: "Bayon";
+  font-size: 26px;
+  margin-top: 8px;
+  text-align: center;
+}
+.logo-container {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}

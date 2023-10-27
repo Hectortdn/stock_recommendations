@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Oxygen";
   src: local("OxygenRegular"), url("./Oxygen-Regular.ttf") format("truetype");
   font-weight: 700;
@@ -17,10 +17,10 @@
   src: local("OxygenBold"), url("./Oxygen-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
-}
+} */
 
 :root {
-  font-family: OxygenRegular, system-ui, sans-serif;
+  
   line-height: 1.5;
   font-weight: 400;
 

@@ -3,6 +3,7 @@ import React from "react";
 import { Route, RouteProps } from "./components/Route";
 import "./styles.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Logo } from "../Logo";
 
 const routes: Omit<RouteProps, "isActive">[] = [
   { label: "Dashboard", route: "/dashboard" },
@@ -20,6 +21,8 @@ function Sidebar() {
   };
   return (
     <div className="container-sidebar">
+
+      <Logo/>
       <div className="routes-container">
         {routes.map((item, index) => (
           <Route

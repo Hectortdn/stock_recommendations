@@ -17,7 +17,7 @@ function ChartCloseValues({ series = [] }: ChartCloseValuesProps) {
       series: series,
       chart: {
         type: "area",
-        height: '400',
+        height: "400",
         animations: {
           animateGradually: {
             enabled: false,
@@ -28,14 +28,12 @@ function ChartCloseValues({ series = [] }: ChartCloseValuesProps) {
         enabled: false,
       },
       legend: {
-        fontSize: "10",
+        fontSize: "12",
         position: "top",
+        horizontalAlign: "center",
       },
       markers: {
         size: 0,
-      },
-      title: {
-        text: "Fechamento Normalizado",
       },
 
       yaxis: {
@@ -68,11 +66,7 @@ function ChartCloseValues({ series = [] }: ChartCloseValuesProps) {
   }, [options]);
 
   return (
-    <div
-      className="chart-close-values"
-      ref={chartRef}
-      style={{ flex: 1 }}
-    />
+    <div ref={chartRef} style={{ flex: 1 }} className="chart-close-values" />
   );
 }
 

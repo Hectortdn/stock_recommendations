@@ -8,6 +8,8 @@ import "./index.css";
 //ROUTES
 import DashboardScreen from "./pages/screens/dashboard.tsx";
 import DetailsScreen from "./pages/screens/details.tsx";
+import { Ticker } from "./pages/components/ticker/index.tsx";
+import { TickerScreen } from "./pages/screens/ticker.tsx";
 
 const DevelopmentAlertScreen = () => (
   <div
@@ -45,7 +47,11 @@ const router = createBrowserRouter([
       },
       {
         path: "tables",
-        element: <DevelopmentAlertScreen />,
+        element: <TickerScreen />,
+      },
+      {
+        path: "tickerDetails",
+        element: <TickerScreen />,
       },
       {
         path: "about",

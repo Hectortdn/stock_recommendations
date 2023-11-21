@@ -3,18 +3,47 @@ import ApexCharts, { ApexOptions } from "apexcharts";
 
 import { customTextVariation } from "../../utils/normalizes";
 import { getIconsBySector } from "../../utils/functions";
-import { StockCandlestickApiReturn } from "../../models";
+import {  StockProps } from "../../models";
 import { Text } from "../Text";
 import "./styles.css";
 
 interface ChartValuesProps {
-  data: StockCandlestickApiReturn[];
+  data: StockProps[];
+}
+
+interface ChartProps {
+  x: string;
+  y: number | number[];
+}
+
+const HEIGHT_CHART = 620;
+
+function getChartValues(data: StockProps["stockValues"]) {
+  const chartValues = [] as ChartProps[];
+  const chartCloseValues = [] as ChartProps[];
+
+  data.forEach((item) => {
+    chartCloseValues.push({
+      x: item.date,
+      y: item.close,
+    });
+    chartValues.push({
+      x: item.date,
+      y: [item.open, item.high, item.low, item.close],
+    });
+  });
+
+  return { chartValues, chartCloseValues };
 }
 
 function ChartValues({ data }: ChartValuesProps) {
   const chartRef = React.useRef(null);
   const [tickerUnderAnalysis, setTickerUnderAnalysis] =
-    React.useState<StockCandlestickApiReturn>(data[0]);
+    React.useState<StockProps>(data[0]);
+
+  const { chartCloseValues, chartValues } = getChartValues(
+    tickerUnderAnalysis.stockValues
+  );
 
   const onClickListIndex = (index: number) => {
     setTickerUnderAnalysis(data[index]);
@@ -26,16 +55,17 @@ function ChartValues({ data }: ChartValuesProps) {
         {
           name: "line",
           type: "line",
-          data: tickerUnderAnalysis?.chartClose,
+          data: chartCloseValues,
         },
         {
           name: "candle",
           type: "candlestick",
-          data: tickerUnderAnalysis?.chartValues,
+          data: chartValues,
         },
       ],
+
       chart: {
-        height: "80%",
+        height: "85%",
         type: "line",
         animations: {
           dynamicAnimation: {
@@ -45,7 +75,7 @@ function ChartValues({ data }: ChartValuesProps) {
             enabled: false,
           },
         },
-        toolbar: { show: false },
+        toolbar: { tools: { reset: true } },
       },
       stroke: {
         width: [0.5, 3],
@@ -136,14 +166,14 @@ function ChartValues({ data }: ChartValuesProps) {
   );
 
   return (
-    <div className="close-values-chart">
+    <div className="close-values-chart" style={{ height: HEIGHT_CHART }}>
       <div style={{ flex: 1 }}>
         <div className="header-chart">
-          <Text className="ticker">{tickerUnderAnalysis?.ticker}</Text>
+          <Text className="ticker">{tickerUnderAnalysis?.papel}</Text>
 
           <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
             <Text className="ticker-price-chart">
-              {tickerUnderAnalysis?.price}
+              {tickerUnderAnalysis?.cotacao}
               <Text style={{ fontWeight: 600, fontSize: 14 }}>/BRL</Text>
             </Text>
             {tickerUnderAnalysis?.percentageVariation && (
@@ -164,40 +194,27 @@ function ChartValues({ data }: ChartValuesProps) {
         <div ref={chartRef} />
       </div>
 
-      <div style={{ flex: 0.3 }}>
-        <div className="header-list">
-          <Text>Tickers</Text>
-        </div>
-        <div className="list-tickers">
-          {data.map((item, index) => {
-            const { icon: Icon, ...itemVariation } = customTextVariation(
-              item.percentageVariation
-            );
+      <div style={{ flex:0.15}}>
+        <div className="list-tickers" style={{ height: HEIGHT_CHART }}>
+          <div className="header-list">
+            <Text style={{ fontWeight: 500, fontSize: 16 }}>Ações</Text>
+          </div>
 
-            const { color, icon: IconSector } = getIconsBySector(item?.type);
+          {data.map((item, index) => {
+      
+            const { color, icon: IconSector } = getIconsBySector(item?.sector);
             return (
               <div
                 key={index}
                 className={`list-item ${
-                  tickerUnderAnalysis?.ticker === item.ticker &&
+                  tickerUnderAnalysis?.papel === item.papel &&
                   "list-item-active"
                 }`}
                 onClick={() => onClickListIndex(index)}
               >
                 <div style={{ alignItems: "center", display: "flex", gap: 8 }}>
                   <IconSector color={color} />
-                  <Text>{item?.ticker}</Text>
-                </div>
-
-                <div style={{ display: "flex", gap: 10 }}>
-                  <Text>{item?.price}</Text>
-                  <div>
-                    <Text style={{ color: itemVariation.color }}>
-                      {itemVariation?.value}
-                    </Text>
-
-                    <Icon color={itemVariation.color} />
-                  </div>
+                  <Text>{item?.papel}</Text>
                 </div>
               </div>
             );

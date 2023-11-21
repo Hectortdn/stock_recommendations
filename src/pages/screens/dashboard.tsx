@@ -1,22 +1,21 @@
 import React from "react";
 
-import { StockCandlestickApiReturn, StockRankingApiReturn } from "../../models";
+import { StockProps } from "../../models";
 import { Dashboard } from "../components/dashboard";
 import * as api from "../../services/functions";
+import { useNavigate } from "react-router-dom";
 
 function DashboardScreen() {
+  const navigate = useNavigate();
   const [isLoadingData, setIsLoadingData] = React.useState<boolean>(false);
-  const [rankingActions, setRankingActions] = React.useState<
-    StockRankingApiReturn[]
-  >([]);
+  const [rankingActions, setRankingActions] = React.useState<StockProps[]>([]);
   const [stockCandlestickData, setStockCandlestickData] = React.useState<
-    StockCandlestickApiReturn[]
+    StockProps[]
   >([]);
 
   const getRankingActions = React.useCallback(async () => {
     try {
-      const rankingActions: StockRankingApiReturn[] =
-        await api.getRankingActions();
+      const rankingActions = await api.getRankingActions();
       setRankingActions(rankingActions);
 
       localStorage.setItem("stockRanking", JSON.stringify(rankingActions));
@@ -25,23 +24,20 @@ function DashboardScreen() {
     }
   }, []);
 
-  const fetchStockCandlestickData = React.useCallback(async () => {
-    try {
-      const responseStockCandlestick = await api.getStockCandlestickData();
-      setStockCandlestickData(responseStockCandlestick);
-    } catch (error) {
-      console.log("Error in get ranking actions", error);
-    }
-  }, []);
-
   const init = async () => {
     try {
       setIsLoadingData(true);
+      const stock = await api.getStock();
+      setStockCandlestickData(stock);
 
-      await Promise.all([getRankingActions(), fetchStockCandlestickData()]);
+      await Promise.all([getRankingActions()]);
     } finally {
       setIsLoadingData(false);
     }
+  };
+
+  const handlePressTicker = (ticker: string) => {
+    navigate("/tickerDetails", { state: { ticker } });
   };
 
   React.useEffect(() => {
@@ -52,6 +48,7 @@ function DashboardScreen() {
     <div>
       {!isLoadingData ? (
         <Dashboard
+          onPressTicker={handlePressTicker}
           rankingActions={rankingActions}
           stockCandlestickData={stockCandlestickData}
         />

@@ -12,7 +12,7 @@ function Header({ data }: HeaderProps) {
     <div className="details-header-container">
       {data.map((item) => {
         const { color, value } = customTextVariation(item.percentageVariation);
-        const { color: IconColor, icon: Icon } = tickerSectorThemes[item.type];
+        const { color: IconColor, icon: Icon } = tickerSectorThemes[item.sector];
         return (
           <div>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -20,14 +20,14 @@ function Header({ data }: HeaderProps) {
                 <Icon color={IconColor} />
 
                 <Text style={{ fontWeight: 600, fontSize: 16 }}>
-                  {item.ticker}
+                  {item.papel}
                 </Text>
               </div>
 
               <Text style={{ fontWeight: 400, fontSize: 14 }}>
                 Preço:{" "}
                 <Text style={{ fontWeight: 400, fontSize: 16 }}>
-                  R$ {item.price}
+                  R$ {item.cotacao}
                 </Text>
               </Text>
               <Text style={{ fontWeight: 400, fontSize: 14 }}>

@@ -1,0 +1,59 @@
+.stock-correlations > table {
+  width: auto;
+  height: 500px;
+  display: block;
+  overflow: scroll;
+  border-radius: 10px;
+  background-color: white;
+  border-collapse: collapse;
+  font-family: arial, sans-serif;
+}
+
+.correlations-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.stock-correlations table > tbody > tr {
+  left: 0;
+  height: 60px;
+  position: static;
+  color: #1f263e;
+  background: white;
+}
+
+.stock-correlations table > tbody > tr > td {
+  text-align: center;
+}
+
+.stock-correlations > table > thead > tr {
+  height: 60px;
+  background: #1f263e;
+}
+
+.stock-correlations > table > thead > tr > th {
+  padding-inline: 12px;
+}
+
+.stock-correlations-index,
+.stock-correlations-column {
+  color: white;
+  padding-inline: 4px;
+  background: #1f263e;
+  text-transform: capitalize;
+  text-align: center; /* Centraliza o texto nas células */
+}
+
+.stock-correlations-column {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+
+.stock-correlations-index {
+  position: sticky;
+  left: 0;
+  z-index: 100;
+}

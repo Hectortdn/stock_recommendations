@@ -6,7 +6,7 @@
   overflow-y: hidden;
   border-radius: 10px;
   background-color: white;
-  border: solid 0.7px #dfe5f9;
+  
   position: relative;
   transition: transform 0.2s ease;
 }

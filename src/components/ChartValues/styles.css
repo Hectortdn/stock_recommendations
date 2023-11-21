@@ -4,11 +4,10 @@
 }
 
 .close-values-chart {
-  height: fit-content;
   display: flex;
   border-radius: 10px;
   background-color: white;
-  border: solid 0.7px #dfe5f9;
+  
 }
 
 .ticker {
@@ -34,9 +33,13 @@
 }
 
 .header-list {
+  top: 0;
+  z-index: 10;
   display: flex;
-  padding: 15px 20px;
+  position: sticky;
+  padding: 15px;
   align-items: center;
+  background-color: white;
   justify-content: center;
   border-bottom: solid 1px #f2f4fd;
 }
@@ -45,16 +48,14 @@
   z-index: 10;
   display: flex;
   overflow-y: scroll;
-  max-height: 440px;
+  max-height: fit-content;
   flex-direction: column;
   border-left: solid 1px #f2f4fd;
 }
 
 .list-item {
-  display: flex;
   padding: 10px 24px;
   align-items: center;
-  justify-content: space-between;
   border-bottom: solid 1px #f2f4fd;
 }
 

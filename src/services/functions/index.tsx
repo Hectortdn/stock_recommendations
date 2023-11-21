@@ -1,14 +1,24 @@
 import { api } from "../api";
 import {
-  StockRankingApiReturn,
-  StockCloseBestReturnApi,
-  StockCandlestickApiReturn,
+  StockProps,
+  BestStocks,
   StockTableValues,
+  StockCandlestickApiReturn,
+  TickerNews,
 } from "../../models";
 
-export async function getRankingActions(): Promise<StockRankingApiReturn[]> {
+export async function getRankingActions(): Promise<StockProps[]> {
   const responseRanking = await api.get("/api/stock-ranking");
-  return responseRanking.data;
+  const { data } = responseRanking.data;
+
+  return data;
+}
+
+export async function getStock(): Promise<StockProps[]> {
+  const responseStock = await api.get("/api/stock");
+  const { data } = responseStock.data;
+
+  return data;
 }
 
 export async function getStockCandlestickData(): Promise<
@@ -19,12 +29,22 @@ export async function getStockCandlestickData(): Promise<
   return response.data;
 }
 
-export async function getStockCloseBest(): Promise<StockCloseBestReturnApi[]> {
-  const response = await api.get("/api/stock-chart-line-data");
+export async function getBestStock(): Promise<BestStocks[]> {
+  const response = await api.get("/api/best-stock");
   return response.data;
 }
 
 export async function getStockValuesTable(): Promise<StockTableValues[]> {
   const response = await api.get("/api/stock-table-values");
+  return response.data;
+}
+
+export async function getTickerData(ticker: string): Promise<StockProps> {
+  const response = await api.get(`/api/stock/${ticker}`);
+  return response.data;
+}
+
+export async function getTickerNews(ticker: string): Promise<TickerNews> {
+  const response = await api.get(`/api/stock/${ticker}/news`);
   return response.data;
 }

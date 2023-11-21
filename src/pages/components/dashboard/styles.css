@@ -1,6 +1,12 @@
 .container-landing {
   flex: 1;
   padding-top: 24px;
+  padding-bottom: 24px;
 }
 
-
+.subtitle {
+  font-size: 18px;
+  color: #1f263e;
+  font-weight: 600;
+  font-family: Oxygen;
+}
